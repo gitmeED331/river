@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Set environment variables
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+
+
 # Start authentication agent and kwallet init
 /usr/lib/polkit-kde-authentication-agent-1 &
 /usr/lib/pam_kwallet_init &
@@ -19,7 +24,7 @@ pcloud &
 # filen-desktop &
 kdeconnect-indicator &
 signal-desktop --start-in-tray &
-synology-drive &
+# synology-drive &
 
 spleep 10 && keepassxc &
 

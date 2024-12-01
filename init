@@ -24,17 +24,17 @@ riverctl map normal Super+Shift Escape spawn "ags toggle sessioncontrols"
 riverctl map normal Super+Alt R spawn "ags quit; ags run"
 
 export wallpaper='~/Pictures/Wallpapers/groot-full.jpg'
-riverctl map normal Super L spawn "ags -i lockscreen -c ~/.config/ags/Lockscreen" 
+riverctl map normal Super L spawn "ags run -d ~/.config/ags/Lockscreen"
 
 # Screenshot
 riverctl map normal None Print spawn "${scripts_dir}/screencapture.sh screenshot area"
-riverctl map normal Super+Control Print spawn "${scripts_dir}/screencapture.sh screenshot full"
+riverctl map normal Control Print spawn "${scripts_dir}/screencapture.sh screenshot full"
 
 # Screenrecord
-riverctl map normal Super S spawn "${scripts_dir}/screencapture.sh record area"
-riverctl map normal Super+Shift S spawn "${scripts_dir}/screencapture.sh record full"
+riverctl map normal Super Print spawn "${scripts_dir}/screencapture.sh record area"
+riverctl map normal Super+Control Print spawn "${scripts_dir}/screencapture.sh record full"
 
-riverctl map normal Super+Control S spawn "bash -c 'killall wf-recorder'"
+riverctl map normal Super+Control+Alt Print spawn "bash -c 'killall wf-recorder'"
 
 # ------ layout keybinds
 # Super+J and Super+K to focus the next/previous view in the layout stack

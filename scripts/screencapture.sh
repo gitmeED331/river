@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCREENSHOT_OUTPUT_DIR="$HOME/Pictures/Screenshots"
-SCREENRECORD_OUTPUT_DIR="$HOME/Videos/Screenrecordings"
+SCREENRECORD_OUTPUT_DIR="$HOME/Videos/Recordings"
 
 mkdir -p "$SCREENSHOT_OUTPUT_DIR" "$SCREENRECORD_OUTPUT_DIR"
 
