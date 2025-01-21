@@ -10,8 +10,8 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 /usr/lib/pam_kwallet_init &
 
 # Start ags and other services
-ags run &
-udiskie --tray &
+ags run --gtk4 .config/ags4 &
+# udiskie --tray &
 swayosd-server &
 
 # Wait for the network to be up before launching network-dependent apps
@@ -21,9 +21,10 @@ nm-online -q --timeout=30
 ente_auth &
 cryptomator &
 pcloud &
-# filen-desktop &
+filen-desktop &
 kdeconnect-indicator &
 signal-desktop --start-in-tray &
+pcmanfm-qt -d &
 # synology-drive &
 
 spleep 10 && keepassxc &

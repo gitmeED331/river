@@ -11,17 +11,17 @@ riverctl spawn "${scripts_dir}/autostart.sh"
 riverctl map normal Super+Shift Q close # close focused window
 
 # apps
-riverctl map normal Super Return spawn terminator
-riverctl map normal Super Space spawn "ags toggle launcher"
+riverctl map normal Super Return spawn ghostty
+riverctl map normal Super Space spawn "ags request launcher"
 riverctl map normal Super+Alt Space spawn "rofi -show combi"
 riverctl map normal Super E spawn pcmanfm-qt
 riverctl map normal Super W spawn "vivaldi-stable"
 
-riverctl map normal Super V spawn "ags toggle cliphist"
-riverctl map normal Super+Alt W spawn "ags toggle wallpapers"
-riverctl map normal Super X spawn "ags toggle dashboard"
-riverctl map normal Super+Shift Escape spawn "ags toggle sessioncontrols"
-riverctl map normal Super+Alt R spawn "ags quit; ags run"
+riverctl map normal Super V spawn "ags request cliphist"
+riverctl map normal Super+Alt W spawn "ags request wallpapers"
+riverctl map normal Super X spawn "ags request dashboard"
+riverctl map normal Super+Shift Escape spawn "ags request sessioncontrols"
+riverctl map normal Super+Alt R spawn "ags quit; ags run --gtk4 .config/ags4"
 
 export wallpaper='~/Pictures/Wallpapers/groot-full.jpg'
 riverctl map normal Super L spawn "ags run -d ~/.config/ags/Lockscreen"
@@ -34,7 +34,7 @@ riverctl map normal Control Print spawn "${scripts_dir}/screencapture.sh screens
 riverctl map normal Super Print spawn "${scripts_dir}/screencapture.sh record area"
 riverctl map normal Super+Control Print spawn "${scripts_dir}/screencapture.sh record full"
 
-riverctl map normal Super+Control+Alt Print spawn "bash -c 'killall wf-recorder'"
+riverctl map normal Super+Shift Print spawn "${scripts_dir}/screencapture.sh record stop"
 
 # ------ layout keybinds
 # Super+J and Super+K to focus the next/previous view in the layout stack
